@@ -78,7 +78,7 @@ function ButtonText({ children, style = "", active = false }) {
 }
 
 const COBALT_BASE = "https://api.cobalt.tools";
-const AGENT = "lithium-client/0.0.1 <haley(at)program(dot)mr>";
+const AGENT = "lithium-client/0.0.2 <haley(at)program(dot)mr>";
 
 function get(url, noBase = false, api = COBALT_BASE, ...args) {
   const res = fetch((noBase ? "" : api) + url, {
