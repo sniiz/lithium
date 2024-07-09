@@ -33,25 +33,19 @@ if you want to build the app yourself, you can do so with the following steps:
 yarn install
 ```
 
-3. install eas-cli
+3. make an [expo](https://expo.dev/) account and log in with eas-cli
 
 ```sh
-yarn global add eas-cli
+npx eas-cli login
 ```
 
-4. make an [expo](https://expo.dev/) account and log in with eas-cli
+4. build the app
 
 ```sh
-eas login
+npx eas-cli build -p android
 ```
 
-5. build the app
-
-```sh
-eas build -p android
-```
-
-6. profit
+5. profit
 
 ## license
 
