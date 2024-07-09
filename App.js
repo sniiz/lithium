@@ -248,10 +248,7 @@ export default function App() {
 
       setIsLoading(false);
       setUrl("");
-      setStatus("");
-      Alert.alert("downloaded", "file saved to downloads", [
-        { text: "ok", onPress: () => {} },
-      ]);
+      setStatus("downloaded successfully");
 
       // try {
       //   const asset = await MediaLibrary.createAssetAsync(result.uri);
@@ -1106,7 +1103,7 @@ export default function App() {
         <View className="flex flex-row items-center justify-center w-full px-1 mt-4">
           <Info size={20} color={"#e1e1e1"} />
           <Text className="text-accent text-base font-noto-reg ml-2">
-            {status}...
+            {status}
           </Text>
         </View>
       ) : null}
