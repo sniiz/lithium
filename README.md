@@ -12,11 +12,12 @@ android app for [cobalt.tools](https://github.com/imputnet/cobalt), made with re
 
 ![about](https://github.com/sniiz/lithium/blob/main/screenshots/about.png?raw=true) -->
 
+<div align='center'>
 <img src="https://github.com/sniiz/lithium/blob/main/screenshots/home.png?raw=true" width="200" alt="home">
 <img src="https://github.com/sniiz/lithium/blob/main/screenshots/loading.png?raw=true" width="200" alt="loading">
-
 <img src="https://github.com/sniiz/lithium/blob/main/screenshots/settings.png?raw=true" width="200" alt="settings">
 <img src="https://github.com/sniiz/lithium/blob/main/screenshots/about.png?raw=true" width="200" alt="about">
+</div>
 
 ## setup
 
