@@ -1,5 +1,5 @@
 import {
-  AlertCircle,
+  AlertTriangle,
   ArrowLeft,
   ArrowRight,
   Check,
@@ -20,7 +20,6 @@ import {
 import { useEffect, useState } from "react";
 import {
   ActivityIndicator,
-  Alert,
   Linking,
   Pressable,
   SafeAreaView,
@@ -224,11 +223,49 @@ export default function App() {
       // fetch the url to get the filename
       // then download it with FileSystem.downloadAsync
       const filenameRes = await get(fileUrl, true);
-      const filename = filenameRes.headers
-        .get("content-disposition")
-        .match(/filename="(.+)"/)[1]
-        .replace(/[^a-zA-Z0-9.\(\)]/g, "_")
-        .replace(/_+/g, "_");
+      console.log(filenameRes.headers);
+
+      let filename;
+
+      try {
+        filename = filenameRes.headers
+          .get("content-disposition")
+          .match(/filename="(.+)"/)[1]
+          .replace(/[^a-zA-Z0-9.\(\)]/g, "_")
+          .replace(/_+/g, "_");
+      } catch (e) {
+        console.log(e);
+        let ext;
+        // there's gotta be a better way to do this
+        switch (filenameRes.headers.get("content-type")) {
+          case "video/mp4":
+            ext = ".mp4";
+            break;
+          case "audio/mpeg":
+            ext = ".mp3";
+            break;
+          case "audio/ogg":
+            ext = ".ogg";
+            break;
+          case "audio/wav":
+            ext = ".wav";
+            break;
+          case "audio/opus":
+            ext = ".opus";
+            break;
+          case "video/webm":
+            ext = ".webm";
+            break;
+          case "video/quicktime":
+            ext = ".mov";
+            break;
+          default:
+            ext = ".bin";
+            break;
+        }
+
+        filename = `li_${Date.now()}${ext}`;
+      }
 
       console.log(filename);
       setStatus(`downloading ${filename}`);
@@ -1094,7 +1131,7 @@ export default function App() {
       </View>
       {error ? (
         <View className="flex flex-row items-center justify-center w-full px-1 mt-4">
-          <AlertCircle size={20} color={"#e1e1e1"} />
+          <AlertTriangle size={20} color={"#e1e1e1"} />
           <Text className="text-accent text-base font-noto-reg ml-2">
             error: {error}
           </Text>
