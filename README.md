@@ -2,6 +2,16 @@
 
 android app for [cobalt.tools](https://github.com/imputnet/cobalt), made with react native + expo
 
+## screenshots
+
+![home](https://github.com/sniiz/lithium/blob/main/screenshots/home.png?raw=true)
+
+![loading](https://github.com/sniiz/lithium/blob/main/screenshots/loading.png?raw=true)
+
+![settings](https://github.com/sniiz/lithium/blob/main/screenshots/settings.png?raw=true)
+
+![about](https://github.com/sniiz/lithium/blob/main/screenshots/about.png?raw=true)
+
 ## setup
 
 if you just want the app, a prebuilt apk is available in the [releases](https://github.com/sniiz/lithium/releases) section.
